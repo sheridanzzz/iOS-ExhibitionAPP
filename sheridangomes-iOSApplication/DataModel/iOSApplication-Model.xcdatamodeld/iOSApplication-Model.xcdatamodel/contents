@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="16119" systemVersion="19G2021" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Exhibition" representedClassName="Exhibition" syncable="YES">
+        <attribute name="exDescription" optional="YES" attributeType="String"/>
+        <attribute name="icon" optional="YES" attributeType="String" allowsExternalBinaryDataStorage="YES"/>
+        <attribute name="latitude" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="longitude" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <relationship name="exhibitionPlants" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Plant" inverseName="plantExhibitions" inverseEntity="Plant"/>
+    </entity>
+    <entity name="Plant" representedClassName="Plant" syncable="YES">
+        <attribute name="family" optional="YES" attributeType="String"/>
+        <attribute name="image" optional="YES" attributeType="String" allowsExternalBinaryDataStorage="YES"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="scientificName" optional="YES" attributeType="String"/>
+        <attribute name="yearDiscovered" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <relationship name="plantExhibitions" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Exhibition" inverseName="exhibitionPlants" inverseEntity="Exhibition"/>
+    </entity>
+    <elements>
+        <element name="Exhibition" positionX="-63" positionY="-18" width="128" height="133"/>
+        <element name="Plant" positionX="-54" positionY="-9" width="128" height="133"/>
+    </elements>
+</model>
